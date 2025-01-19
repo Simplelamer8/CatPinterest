@@ -2,8 +2,8 @@ import { addToFavourite, CatInterface } from "@/redux/slices/catsSlice";
 import { forwardRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./FavouriteCat.module.css";
-import HoverHeart from "../../images/HoverHeart.svg";
-import Heart from "../../images/Heart.svg";
+import Heart from "@/app/ImageComponents/Heart";
+import HoverHeart from "@/app/ImageComponents/HoverHeart";
 
 export const FavouriteCat = forwardRef<HTMLDivElement, CatInterface>((props, ref) => {
     const dispatch = useDispatch();
@@ -34,9 +34,15 @@ export const FavouriteCat = forwardRef<HTMLDivElement, CatInterface>((props, ref
         <img src={url} alt="" className="w-full h-full" />
         {isHovered ? (
           favourite ? (
-            <HoverHeart onClick={toggleFavourite} className="absolute bottom-5 right-5" />
+            // <HoverHeart onClick={toggleFavourite} className="absolute bottom-5 right-5" />
+            <div onClick={toggleFavourite} className="absolute bottom-5 right-5">
+              <HoverHeart/>
+            </div>
           ) : (
-            <Heart onClick={toggleFavourite} className="absolute bottom-5 right-5" />
+            // <Heart onClick={toggleFavourite} className="absolute bottom-5 right-5" />
+            <div onClick={toggleFavourite} className="absolute bottom-5 right-5">
+              <Heart/>
+            </div>
           )
         ) : null}
         <div ref={ref}></div>
