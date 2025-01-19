@@ -1,7 +1,7 @@
 "use client";
 import { CatInterface, CatsInterface, setCats } from "@/redux/slices/catsSlice";
 import axios from "axios";
-import { memo, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function UseCatFetch(pageNumber: number) {

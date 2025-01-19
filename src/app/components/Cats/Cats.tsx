@@ -1,9 +1,8 @@
 "use client";
-import UseCatFetch from "@/app/hooks/UseCatFetch";
 import { CatsInterface, incrementPageNumber } from "@/redux/slices/catsSlice";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {Cat} from "../Cat/Cat";
+import { Cat } from "../Cat/Cat";
 
 export default function Cats(props:{loading: boolean, error: boolean, hasMore:boolean}) {
   const { loading, error, hasMore } = props;
@@ -57,7 +56,7 @@ export default function Cats(props:{loading: boolean, error: boolean, hasMore:bo
         })}
       </div>
       {error && <p>Упс! произошла ошибка :3</p>}
-      {loading && <h3 className="text-center">... загружаем еще котиков ...</h3>}
+      {loading && <h3 className="mt-10 text-center">... загружаем еще котиков ...</h3>}
     </>
   );
 }

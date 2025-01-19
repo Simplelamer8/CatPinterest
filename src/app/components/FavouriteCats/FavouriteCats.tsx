@@ -1,4 +1,3 @@
-import UseCatFetch from "@/app/hooks/UseCatFetch";
 import { CatsInterface } from "@/redux/slices/catsSlice";
 import React from "react";
 import { useSelector } from "react-redux";
